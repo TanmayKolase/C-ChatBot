@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Chatbot Interface</title>
+    <link rel="stylesheet" href="static/style.css" />
+    <script src="static/index.js"></script>
+  </head>
+<body>
+    
+    <div class="Chat__wrapper" id="chat-wrapper">
+    <ul class="Chat" id="chat-box">
+      <li class="Chat_item Chat_item_l">
+        <div class="Chat_msgs">
+          <div class="msg">
+            <div class="msg-content">
+              I'm your ChatBot!<br>You can ask me any code!
+            </div>
+          </div>
+        </div>
+        </li>
+    </ul>
+    <div class="user-input">
+        <input
+          type="text"   
+          id="user-input"
+          placeholder="Type a message..."
+          onkeypress="sendMessageOnEnter(event)"
+        />
+        <button onclick="sendMessage()">Send</button>
+      </div>
+  </div>
+</body>
+
+</html>

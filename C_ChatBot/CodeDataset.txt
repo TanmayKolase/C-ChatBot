@@ -1,0 +1,844 @@
+Write a C program to add two numbers.
+####
+#include <stdio.h>
+int main() {
+    int num1, num2, sum;
+    // Input two numbers
+    printf("Enter two numbers: ");
+    scanf("%d %d", &num1, &num2);
+
+    // Adding the numbers
+    sum = num1 + num2;
+
+    // Displaying the result
+    printf("Sum: %d\n", sum);
+
+    return 0;
+}
+
+
+How can I implement a loop in C?
+####
+#include <stdio.h>
+
+int main() {
+    int i;
+
+    // Printing numbers from 1 to 5 using a for loop
+    for (i = 1; i <= 5; i++) {
+        printf("%d ", i);
+    }
+
+    return 0;
+}
+
+
+Write a C program to find the factorial of a number?
+####    
+#include <stdio.h>
+int main() {
+    int n, i;
+    unsigned long long factorial = 1;
+
+    // Input a number
+    printf("Enter a positive integer: ");
+    scanf("%d", &n);
+
+    // Calculating factorial
+    for (i = 1; i <= n; ++i) {
+        factorial *= i;
+    }
+
+    // Displaying the result
+    printf("Factorial of %d = %llu\n", n, factorial);
+
+    return 0;
+}
+
+
+Write a C program to print Hello World
+####
+#include <stdio.h>
+
+int main()
+{
+	printf("Hello World");
+
+	return 0;
+}
+
+
+Write a C program to print my name
+####
+#include <stdio.h> 
+
+int main() 
+{ 
+	char name[20]; 
+	printf("Enter name: "); 
+
+	// user input will be taken here 
+	scanf("%s", name); 
+	printf("Your name is %s.", name); 
+	return 0; 
+}
+
+
+Write a C Program to Check Prime Number
+####
+What is Prime number: A prime number is a natural number greater than 1 that is completely divisible only by 1 and itself. For example, 2, 3, 5, 7, 11, etc.
+are the first few prime numbers.
+
+#include <stdio.h> 
+void checkPrime(int N) 
+{ 
+	// initially, flag is set to true or 1 
+	int flag = 1; 
+
+	// loop to iterate through 2 to N/2 
+	for (int i = 2; i <= N / 2; i++) { 
+
+		// if N is perfectly divisible by i 
+		// flag is set to 0 i.e false 
+		if (N % i == 0) { 
+			flag = 0; 
+			break; 
+		} 
+	} 
+
+	if (flag) { 
+		printf("The number %d is a Prime Number\n", N); 
+	} 
+	else { 
+		printf("The number %d is not a Prime Number\n", N); 
+	} 
+
+	return; 
+} 
+int main() 
+{ 
+	int N = 546; 
+
+	checkPrime(N); 
+
+	return 0;
+}
+
+
+Write a C Program To Multiply Two Floating-Point Numbers
+####
+#include <stdio.h> 
+float multiply(float a, float b) 
+{ 
+return a * b; 
+} 
+int main() 
+{ 
+	float A = 2.12, B = 3.88, product; 
+
+	// Calling product function 
+	product = multiply(A, B); 
+
+	// Displaying result up to 3 decimal places. 
+	printf("Product of entered numbers is:%.3f", product); 
+
+	return 0; 
+}
+
+
+Write a C Program To Print ASCII Value of a Character
+####
+#include <stdio.h>
+int main() {  
+    char c;
+    printf("Enter a character: ");
+    scanf("%c", &c);  
+    
+    // %d displays the integer value of a character
+    // %c displays the actual character
+    printf("ASCII value of %c = %d", c, c);
+    
+    return 0;
+}
+
+
+Write a C Program to Swap two Numbers
+####
+Swapping two numbers means exchanging their values with each other.
+
+#include <stdio.h>
+int main()
+{
+	int x, y;
+	printf("Enter Value of x ");
+	scanf("%d", &x);
+	printf("\nEnter Value of y ");
+	scanf("%d", &y);
+
+	// Using a temporary variable to swap the values
+	// Store the value of x in a temporary variable
+	int temp = x;
+	// Assign the value of y to x
+	x = y;
+	// Assign the value stored in the temporary variable to
+	// y
+	y = temp;
+
+	printf("\nAfter Swapping: x = %d, y = %d", x, y);
+	return 0;
+}
+
+
+Write a C Program to Find the Size of int, float, double and char
+####
+#include <stdio.h>
+int main()
+{
+	int integerType;
+	char charType;
+	float floatType;
+	double doubleType;
+
+	printf("Size of int is: %ld", sizeof(integerType));
+	printf("\nSize of char is: %ld", sizeof(charType));
+	printf("\nSize of float is: %ld", sizeof(floatType));
+	printf("\nSize of double is: %ld", sizeof(doubleType));
+	
+	return 0;
+}
+
+
+Write a C Program to Add Two Complex Numbers
+####
+Example: Add Two Complex Number
+Input:
+a = ( 2 + 3i )
+b = ( 4 + 5i )
+Output:
+Sum = ( 6 + 8i )
+
+#include <stdio.h>
+typedef struct complexNumber {
+	int real;
+	int img;
+} complex;
+
+// This function accepts two complex numbers
+// as parameter and return addition of
+// them.
+complex add(complex x, complex y);
+
+int main()
+{
+	complex a, b, sum;
+
+	// First complex number
+	a.real = 2;
+	a.img = 3;
+
+	// Second complex number
+	b.real = 4;
+	b.img = 5;
+
+	// Print first complex number
+	printf("\n a = %d + %di", a.real, a.img);
+
+	// print second complex number
+	printf("\n b = %d + %di", b.real, b.img);
+
+	// call add(a,b) function and
+	// pass complex numbers a & b
+	sum = add(a, b);
+
+	// Print result
+	printf("\n sum = %d + %di", sum.real, sum.img);
+
+	return 0;
+}
+
+complex add(complex x, complex y)
+{
+	// Define a new complex number.
+	complex add;
+
+	// Add real part of a&b
+	add.real = x.real + y.real;
+
+	// Add Imaginary part of a&b
+	add.img = x.img + y.img;
+
+	return (add);
+}
+
+
+Write a C program to find the largest element in an array.
+####
+#include <stdio.h>
+int main() {
+    int arr[] = {1, 6, 3, 9, 2, 5};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    int max = arr[0];
+    for (int i = 1; i < n; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+    }
+    printf("Largest element in the array: %d\n", max);
+    return 0;
+}
+
+
+Write a C program to sort an array in ascending order.
+####
+#include <stdio.h>
+int main() {
+    int arr[] = {3, 7, 1, 9, 2, 6};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    for (int i = 0; i < n - 1; i++) {
+        for (int j = 0; j < n - i - 1; j++) {
+            if (arr[j] > arr[j + 1]) {
+                int temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+    printf("Sorted array in ascending order:\n");
+    for (int i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+    return 0;
+}
+
+
+Write a C program to count the number of vowels and consonants in a string.
+####
+#include <stdio.h>
+#include <string.h>
+int main() {
+    char str[] = "Hello World";
+    int vowels = 0, consonants = 0;
+    for (int i = 0; str[i] != '\0'; i++) {
+        if (str[i] == 'a' || str[i] == 'e' || str[i] == 'i' || str[i] == 'o' || str[i] == 'u' ||
+            str[i] == 'A' || str[i] == 'E' || str[i] == 'I' || str[i] == 'O' || str[i] == 'U') {
+            vowels++;
+        } else if ((str[i] >= 'a' && str[i] <= 'z') || (str[i] >= 'A' && str[i] <= 'Z')) {
+            consonants++;
+        }
+    }
+    printf("Number of vowels: %d\n", vowels);
+    printf("Number of consonants: %d\n", consonants);
+    return 0;
+}
+
+
+Write a C program to calculate the sum of elements in a two-dimensional array.
+####
+#include <stdio.h>
+int main() {
+    int arr[3][3] = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+    int sum = 0;
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            sum += arr[i][j];
+        }
+    }
+    printf("Sum of elements in the array: %d\n", sum);
+    return 0;
+}
+
+
+Write a C program to reverse a string.
+####
+#include <stdio.h>
+#include <string.h>
+int main() {
+    char str[] = "Hello World";
+    int length = strlen(str);
+    printf("Reversed string: ");
+    for (int i = length - 1; i >= 0; i--) {
+        printf("%c", str[i]);
+    }
+    printf("\n");
+    return 0;
+}
+
+
+Write a C program to calculate the factorial of a number using recursion.
+####
+#include <stdio.h>
+unsigned long long factorial(int n) {
+    if (n == 0) {
+        return 1;
+    }
+    return n * factorial(n - 1);
+}
+int main() {
+    int num = 5;
+    printf("Factorial of %d = %llu\n", num, factorial(num));
+    return 0;
+}
+
+
+Write a C program to check whether a string is a palindrome or not.
+####
+#include <stdio.h>
+#include <string.h>
+int main() {
+    char str[] = "madam";
+    int length = strlen(str);
+    int isPalindrome = 1;
+    for (int i = 0; i < length / 2; i++) {
+        if (str[i] != str[length - i - 1]) {
+            isPalindrome = 0;
+            break;
+        }
+    }
+    if (isPalindrome) {
+        printf("The string is a palindrome.\n");
+    } else {
+        printf("The string is not a palindrome.\n");
+    }
+    return 0;
+}
+
+
+Write a C program to check whether a number is a palindrome or not.
+####
+#include <stdio.h>
+int main() {
+    int num = 12321;
+    int originalNum = num;
+    int reversedNum = 0, remainder;
+    while (num != 0) {
+        remainder = num % 10;
+        reversedNum = reversedNum * 10 + remainder;
+        num /= 10;
+    }
+    if (originalNum == reversedNum) {
+        printf("%d is a palindrome number.\n", originalNum);
+    } else {
+        printf("%d is not a palindrome number.\n", originalNum);
+    }
+    return 0;
+}
+
+
+Write a C program to calculate the power of a number without using the pow() function.
+####
+#include <stdio.h>
+int power(int base, int exponent) {
+    int result = 1;
+    while (exponent != 0) {
+        result *= base;
+        --exponent;
+    }
+    return result;
+}
+int main() {
+    int base = 2, exponent = 3;
+    printf("%d^%d = %d\n", base, exponent, power(base, exponent));
+    return 0;
+}
+
+
+Write a C program to find the GCD (Greatest Common Divisor) of two numbers.
+####
+#include <stdio.h>
+int gcd(int a, int b) {
+    while (b != 0) {
+        int temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
+}
+int main() {
+    int num1 = 12, num2 = 18;
+    printf("GCD of %d and %d = %d\n", num1, num2, gcd(num1, num2));
+    return 0;
+}
+
+
+Write a C program to find the LCM (Least Common Multiple) of two numbers.
+####
+#include <stdio.h>
+int gcd(int a, int b);
+int lcm(int a, int b) {
+    return (a * b) / gcd(a, b);
+}
+int gcd(int a, int b) {
+    while (b != 0) {
+        int temp = b;
+        b = a % b;
+        a = temp;
+    }
+    return a;
+}
+int main() {
+    int num1 = 12, num2 = 18;
+    printf("LCM of %d and %d = %d\n", num1, num2, lcm(num1, num2));
+    return 0;
+}
+
+
+Write a C program to convert a decimal number to binary.
+####
+#include <stdio.h>
+void decimalToBinary(int n) {
+    int binaryNum[32];
+    int i = 0;
+    while (n > 0) {
+        binaryNum[i] = n % 2;
+        n = n / 2;
+        i++;
+    }
+    for (int j = i - 1; j >= 0; j--) {
+        printf("%d", binaryNum[j]);
+    }
+    printf("\n");
+}
+int main() {
+    int decimalNum = 10;
+    printf("Binary representation of %d: ", decimalNum);
+    decimalToBinary(decimalNum);
+    return 0;
+}
+
+
+Write a C program to convert a binary number to decimal.
+####
+#include <stdio.h>
+#include <math.h>
+int binaryToDecimal(long long n) {
+    int decimalNum = 0, i = 0, remainder;
+    while (n != 0) {
+        remainder = n % 10;
+        n /= 10;
+        decimalNum += remainder * pow(2, i);
+        ++i;
+    }
+    return decimalNum;
+}
+int main() {
+    long long binaryNum = 1010;
+    printf("Decimal representation of %lld: %d\n", binaryNum, binaryToDecimal(binaryNum));
+    return 0;
+}
+
+
+Write a C program to check whether a number is Armstrong or not.
+####
+#include <stdio.h>
+#include <math.h>
+int isArmstrong(int num) {
+    int originalNum, remainder, result = 0, n = 0;
+    originalNum = num;
+    while (originalNum != 0) {
+        originalNum /= 10;
+        ++n;
+    }
+    originalNum = num;
+    while (originalNum != 0) {
+        remainder = originalNum % 10;
+        result += pow(remainder, n);
+        originalNum /= 10;
+    }
+    if (result == num) {
+        return 1;
+    } else {
+        return 0;
+    }
+}
+int main() {
+    int num = 153;
+    if (isArmstrong(num)) {
+        printf("%d is an Armstrong number.\n", num);
+    } else {
+        printf("%d is not an Armstrong number.\n", num);
+    }
+    return 0;
+}
+
+
+Write a C program to find the sum of the first N natural numbers.
+####
+#include <stdio.h>
+int main() {
+    int n = 5;
+    int sum = (n * (n + 1)) / 2;
+    printf("Sum of first %d natural numbers: %d\n", n, sum);
+    return 0;
+}
+
+
+Write a C program to find the second largest element in an array.
+####
+#include <stdio.h>
+int main() {
+    int arr[] = {12, 35, 1, 10, 34, 1};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    int first, second;
+    first = second = INT_MIN;
+    for (int i = 0; i < n; i++) {
+        if (arr[i] > first) {
+            second = first;
+            first = arr[i];
+        } else if (arr[i] > second && arr[i] != first) {
+            second = arr[i];
+        }
+    }
+    printf("Second largest element in the array: %d\n", second);
+    return 0;
+}
+
+
+Write a C program to check whether a string is an anagram of another string.
+####
+#include <stdio.h>
+#include <string.h>
+int main() {
+    char str1[] = "listen";
+    char str2[] = "silent";
+    int freq1[256] = {0};
+    int freq2[256] = {0};
+    int len1 = strlen(str1);
+    int len2 = strlen(str2);
+    if (len1 != len2) {
+        printf("Strings are not anagrams.\n");
+        return 0;
+    }
+    for (int i = 0; i < len1; i++) {
+        freq1[str1[i]]++;
+        freq2[str2[i]]++;
+    }
+    for (int i = 0; i < 256; i++) {
+        if (freq1[i] != freq2[i]) {
+            printf("Strings are not anagrams.\n");
+            return 0;
+        }
+    }
+    printf("Strings are anagrams.\n");
+    return 0;
+}
+
+
+Write a C program to find the sum of the digits of a number.
+####
+#include <stdio.h>
+int main() {
+    int num = 12345;
+    int sum = 0;
+    while (num != 0) {
+        sum += num % 10;
+        num /= 10;
+    }
+    printf("Sum of digits: %d\n", sum);
+    return 0;
+}
+
+
+Write a C program to print Fibonacci series up to n terms.
+####
+#include <stdio.h>
+int main() {
+    int n = 10;
+    int first = 0, second = 1, next;
+    printf("Fibonacci series up to %d terms: ", n);
+    for (int i = 0; i < n; i++) {
+        printf("%d, ", first);
+        next = first + second;
+        first = second;
+        second = next;
+    }
+    printf("\n");
+    return 0;
+}
+
+
+Write a C program to count the number of words in a string.
+####
+#include <stdio.h>
+int main() {
+    char str[] = "This is a sample string.";
+    int count = 1; // Initialize count to 1 assuming at least one word
+    for (int i = 0; str[i] != '\0'; i++) {
+        if (str[i] == ' ' && str[i+1] != ' ') {
+            count++;
+        }
+    }
+    printf("Number of words in the string: %d\n", count);
+    return 0;
+}
+
+
+Write a C program to find the roots of a quadratic equation.
+####
+#include <stdio.h>
+#include <math.h>
+int main() {
+    float a = 1, b = -3, c = 2;
+    float discriminant, root1, root2;
+    discriminant = b*b - 4*a*c;
+    if (discriminant > 0) {
+        root1 = (-b + sqrt(discriminant)) / (2*a);
+        root2 = (-b - sqrt(discriminant)) / (2*a);
+        printf("Roots are real and distinct.\n");
+        printf("Root1 = %.2f\n", root1);
+        printf("Root2 = %.2f\n", root2);
+    } else if (discriminant == 0) {
+        root1 = root2 = -b / (2*a);
+        printf("Roots are real and equal.\n");
+        printf("Root1 = Root2 = %.2f\n", root1);
+    } else {
+        float realPart = -b / (2*a);
+        float imaginaryPart = sqrt(-discriminant) / (2*a);
+        printf("Roots are complex and imaginary.\n");
+        printf("Root1 = %.2f + %.2fi\n", realPart, imaginaryPart);
+        printf("Root2 = %.2f - %.2fi\n", realPart, imaginaryPart);
+    }
+    return 0;
+}
+
+
+Write a C program to reverse a two-dimensional array.
+####
+#include <stdio.h>
+int main() {
+    int arr[3][3] = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+    printf("Original array:\n");
+    for (int i = 0; i < 3; i++) {
+        for (int j = 0; j < 3; j++) {
+            printf("%d ", arr[i][j]);
+        }
+        printf("\n");
+    }
+    printf("Reversed array:\n");
+    for (int i = 2; i >= 0; i--) {
+        for (int j = 2; j >= 0; j--) {
+            printf("%d ", arr[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}
+
+
+Write a C program to find the frequency of each element in an array.
+####
+#include <stdio.h>
+int main() {
+    int arr[] = {1, 2, 8, 3, 2, 2, 2, 5, 1};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    int visited[n];
+    for (int i = 0; i < n; i++) {
+        visited[i] = -1;
+    }
+    for (int i = 0; i < n; i++) {
+        int count = 1;
+        for (int j = i + 1; j < n; j++) {
+            if (arr[i] == arr[j]) {
+                count++;
+                visited[j] = 0;
+            }
+        }
+        if (visited[i] != 0) {
+            visited[i] = count;
+        }
+    }
+    printf("Frequency of each element in the array:\n");
+    for (int i = 0; i < n; i++) {
+        if (visited[i] != 0) {
+            printf("%d occurs %d times\n", arr[i], visited[i]);
+        }
+    }
+    return 0;
+}
+
+
+Write a C program to implement a stack using an array.
+####
+#include <stdio.h>
+#define MAX_SIZE 10
+int stack[MAX_SIZE];
+int top = -1;
+void push(int value) {
+    if (top == MAX_SIZE - 1) {
+        printf("Stack Overflow\n");
+        return;
+    }
+    stack[++top] = value;
+}
+int pop() {
+    if (top == -1) {
+        printf("Stack Underflow\n");
+        return -1;
+    }
+    return stack[top--];
+}
+void display() {
+    if (top == -1) {
+        printf("Stack is empty\n");
+        return;
+    }
+    printf("Stack elements: ");
+    for (int i = 0; i <= top; i++) {
+        printf("%d ", stack[i]);
+    }
+    printf("\n");
+}
+int main() {
+    push(1);
+    push(2);
+    push(3);
+    display();
+    printf("Popped element: %d\n", pop());
+    display();
+    return 0;
+}
+
+
+Write a C program to check whether a number is even or odd.
+####
+#include <stdio.h>
+int main() {
+    int num = 10;
+    if (num % 2 == 0) {
+        printf("%d is even.\n", num);
+    } else {
+        printf("%d is odd.\n", num);
+    }
+    return 0;
+}
+
+
+Write a C program to find the sum of the digits of a number using recursion.
+####
+#include <stdio.h>
+int sumOfDigits(int num) {
+    if (num == 0) {
+        return 0;
+    }
+    return (num % 10) + sumOfDigits(num / 10);
+}
+int main() {
+    int num = 12345;
+    printf("Sum of digits: %d\n", sumOfDigits(num));
+    return 0;
+}
+
+
+Write a C program to find the reverse of a number.
+####
+#include <stdio.h>
+int main() {
+    int num = 12345;
+    int reversed = 0;
+    while (num != 0) {
+        reversed = reversed * 10 + num % 10;
+        num /= 10;
+    }
+    printf("Reversed number: %d\n", reversed);
+    return 0;
+}
